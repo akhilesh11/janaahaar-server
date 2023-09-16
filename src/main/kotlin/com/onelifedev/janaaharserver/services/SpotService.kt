@@ -17,7 +17,9 @@ class SpotService(val spotRepository: SpotRepository,val matchingService: Matche
         return null
     }
 
-    fun updateSpot(){}
+    fun updateSpot(spot : Spot) : Spot{
+        return spotRepository.save(spot)
+    }
 
     fun createSpot(latLng: LatLng, requiredNumberOfPackets : Int, additionalDescription : String) : Spot?{
 
@@ -56,7 +58,9 @@ class SpotService(val spotRepository: SpotRepository,val matchingService: Matche
 
     }
 
-    fun deleteSpot(){}
+    fun deleteSpot(spotId : String){
+        return spotRepository.deleteById(spotId)
+    }
 
     //Based on the choice of search the range radius of the requested latitude and longitude.
     fun searchSpotsWithinRange(requestLatLng: LatLng,resolution : Int) : List<Spot>?{

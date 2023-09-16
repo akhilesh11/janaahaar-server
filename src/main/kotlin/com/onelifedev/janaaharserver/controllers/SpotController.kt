@@ -55,6 +55,10 @@ class SpotController(val spotService: SpotService) {
         return ResponseEntity.ok(spotService.fetchSpotsForUserWithId(userId))
     }
 
+    @DeleteMapping("deleteSpot")
+    fun deleteSpotWithId(spotId : String){
+        spotService.deleteSpot(spotId)
+    }
 
 }
 
