@@ -11,5 +11,3 @@ class JanaaharServerApplication
 	fun main(args: Array<String>) {
 		runApplication<JanaaharServerApplication>(*args)
 	}
-
-
