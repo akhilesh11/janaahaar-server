@@ -73,9 +73,9 @@ class SpotService(val spotRepository: SpotRepository,val matchingService: Matche
             return spotRepository.findSpotWhichContains(requestLatLngHexAddress)
         }
 
-        "SELECT * FROM SPOTS " +
+        /**"SELECT * FROM SPOTS " +
                 "   WHERE (latitude BETWEEN S{latLng.latitude - findRange} AND S{latLng.latitude + findRange} )" +
-                "   AND (longitude BETWEEN S{latLng.longitude - findRange} AND S{latLng.longitude + findRange})"
+                "   AND (longitude BETWEEN S{latLng.longitude - findRange} AND S{latLng.longitude + findRange})"**/
         return null
     }
 
