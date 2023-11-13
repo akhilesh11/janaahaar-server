@@ -26,6 +26,8 @@ class SpotController(val spotService: SpotService) {
                 return ResponseEntity<List<Spot>>(spotsAround,header,HttpStatus.ACCEPTED)
             }
         }
+
+        //When no spots are found nearby return header with message.
         val header = HttpHeaders()
         header.set("Message","No spots found nearby.")
         return ResponseEntity<List<Spot>>(null,header,HttpStatus.NO_CONTENT)
