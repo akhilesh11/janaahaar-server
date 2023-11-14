@@ -1,0 +1,28 @@
+//Steps to connect to mongoDb on OneLifeStories Server
+
+//1. SSH into the Oracle Server
+
+ssh -i "/Users/akhilesh/Projects/OneLifeStories.in/Oracle Instance/ssh-key-2022-09-10.key" opc@144.24.135.224
+
+//2. Connect to the shell of docker running on server.
+
+sudo docker exec -it mongodb bash
+
+//3. Run mongoshell on the docker
+
+mongosh
+
+//4. Use the admin user and authenticate
+
+use admin
+db.auth("USER_NAME","PASSWORD")
+
+//5. use Janaahaar database
+
+use janaahaar
+show collections
+
+donations = db.donations // Fetching collection into a variable
+donations.find() // shows all data in the collection 
+
+//6. 
